@@ -5,6 +5,8 @@ import React from "react";
 const SingleBlog = (props) => {
   const { authorName, authorImg, title, date, time, tags, banner, updateTime } =
     props.blog;
+  const { handleBlog } = props;
+  const { getReadingTime } = props;
   //   console.log(authorName);
   return (
     <>
@@ -28,20 +30,28 @@ const SingleBlog = (props) => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="flex gap-1">
               <p className="text-gray-500">{time} min read</p>
+              <button className="" onClick={() => handleBlog(props.blog)}>
+                Add
+              </button>
             </div>
           </div>
           <div>
             <h1 className="text-4xl">{title}</h1>
           </div>
           <div className="card-actions justify-start py-2">
-            {tags.map((tag) => (
-              <div className="text-gray-500">#{tag}</div>
+            {tags.map((tag, index) => (
+              <div className="text-gray-500" key={index}>
+                #{tag}
+              </div>
             ))}
           </div>
           <div>
-            <button className="text-blue-600 underline font-bold">
+            <button
+              onClick={() => getReadingTime(time)}
+              className="text-blue-600 underline font-bold"
+            >
               Mark as Read
             </button>
           </div>
