@@ -2,7 +2,7 @@
 
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 const SingleBlog = (props) => {
   const { authorName, authorImg, title, date, time, tags, banner, updateTime } =
@@ -39,7 +39,7 @@ const SingleBlog = (props) => {
                 className="outline-none"
                 onClick={() => handleBlog(props.blog)}
               >
-                <FontAwesomeIcon icon={faBookBookmark} />
+                <FontAwesomeIcon icon={faBookmark} />
               </button>
             </div>
           </div>
