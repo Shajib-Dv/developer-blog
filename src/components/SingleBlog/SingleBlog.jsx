@@ -10,6 +10,7 @@ const SingleBlog = (props) => {
   const { handleBlog } = props;
   const { getReadingTime } = props;
   //   console.log(authorName);
+
   return (
     <>
       <div className="card bg-slate-100 shadow-2xl">
@@ -34,7 +35,10 @@ const SingleBlog = (props) => {
             </div>
             <div className="flex gap-1">
               <p className="text-gray-500">{time} min read</p>
-              <button className="" onClick={() => handleBlog(props.blog)}>
+              <button
+                className="outline-none"
+                onClick={() => handleBlog(props.blog)}
+              >
                 <FontAwesomeIcon icon={faBookBookmark} />
               </button>
             </div>

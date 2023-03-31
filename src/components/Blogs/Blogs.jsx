@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import SingleBlog from "../SingleBlog/SingleBlog";
+import { ToastContainer, toast } from "react-toastify";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -19,7 +20,7 @@ const Blogs = () => {
 
   const handleBlog = (blog) => {
     if (singleBlog && singleBlog.find((b) => b.id == blog.id)) {
-      alert("ace");
+      toast("You have already bookmarked this blog");
       return;
     } else {
       const newBlog = [...singleBlog, blog];
