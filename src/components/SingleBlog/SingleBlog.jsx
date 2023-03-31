@@ -1,6 +1,8 @@
 /** @format */
 
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
 
 const SingleBlog = (props) => {
   const { authorName, authorImg, title, date, time, tags, banner, updateTime } =
@@ -14,16 +16,16 @@ const SingleBlog = (props) => {
         <figure>
           <img className="w-full" src={banner} alt="Shoes" />
         </figure>
-        <div className="card-body">
+        <div className="md:card-body w-full p-4">
           <div className="flex justify-between items-center">
             <div className="flex gap-1 ">
               <div className="avatar placeholder">
                 <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-                  <img src={authorImg} alt="" />
+                  <img className="w-full" src={authorImg} alt="" />
                 </div>
               </div>
               <div>
-                <h3 className="font-bold text-2xl">{authorName}</h3>
+                <h3 className="font-bold md:text-2xl">{authorName}</h3>
                 <p className="text-gray-500">
                   {date}
                   <span> ({updateTime} days ago)</span>
@@ -33,12 +35,12 @@ const SingleBlog = (props) => {
             <div className="flex gap-1">
               <p className="text-gray-500">{time} min read</p>
               <button className="" onClick={() => handleBlog(props.blog)}>
-                Add
+                <FontAwesomeIcon icon={faBookBookmark} />
               </button>
             </div>
           </div>
           <div>
-            <h1 className="text-4xl">{title}</h1>
+            <h1 className="text-4xl py-2">{title}</h1>
           </div>
           <div className="card-actions justify-start py-2">
             {tags.map((tag, index) => (

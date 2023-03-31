@@ -5,9 +5,8 @@ import React, { useState } from "react";
 const Sidebar = (props) => {
   // console.log(props.singleBlog);
   const blogs = props.singleBlog;
-
   return (
-    <>
+    <div className="md:sticky md:top-2">
       <div className="border-2 bg-slate-50 rounded p-3">
         <h2 className="text-2xl text-blue-600 font-bold">
           Spend time on read : {props.readTime} Min
@@ -21,7 +20,7 @@ const Sidebar = (props) => {
           {blogs &&
             blogs.map((blog) => (
               <h2
-                className="border bg-slate-50 p-2 rounded-md text-2xl font-semibold"
+                className="border mt-2 bg-slate-50 p-2 rounded-md text-2xl font-semibold"
                 key={blog.id}
               >
                 {blog.title}
@@ -29,7 +28,7 @@ const Sidebar = (props) => {
             ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

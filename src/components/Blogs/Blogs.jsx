@@ -8,6 +8,7 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [singleBlog, setSingleBlog] = useState([]);
   const [readTime, setReadTime] = useState(0);
+
   useEffect(() => {
     fetch("data.json")
       .then((res) => res.json())
@@ -17,8 +18,13 @@ const Blogs = () => {
   // get the blog details by function
 
   const handleBlog = (blog) => {
-    const newBlog = [...singleBlog, blog];
-    setSingleBlog(newBlog);
+    if (singleBlog && singleBlog.find((b) => b.id == blog.id)) {
+      alert("ace");
+      return;
+    } else {
+      const newBlog = [...singleBlog, blog];
+      setSingleBlog(newBlog);
+    }
   };
 
   // get the reading time
@@ -39,7 +45,7 @@ const Blogs = () => {
           />
         ))}
       </div>
-      <div className="w-2/5 ">
+      <div className="md:w-2/5">
         <Sidebar singleBlog={singleBlog} readTime={readTime} />
       </div>
     </div>
