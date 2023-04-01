@@ -18,10 +18,10 @@ const Sidebar = (props) => {
         </h2>
         <div>
           {blogs &&
-            blogs.map((blog) => (
+            blogs.map((blog, index) => (
               <h2
                 className="border mt-2 bg-slate-50 p-2 rounded-md text-2xl font-semibold"
-                key={blog.id}
+                key={index}
               >
                 {blog.title}
               </h2>

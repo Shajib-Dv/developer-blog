@@ -21,11 +21,9 @@ const Blogs = () => {
   const handleBlog = (blog) => {
     if (singleBlog && singleBlog.find((b) => b.id == blog.id)) {
       toast("You have already bookmarked this blog");
-      return;
-    } else {
-      const newBlog = [...singleBlog, blog];
-      setSingleBlog(newBlog);
     }
+    const newBlog = [...singleBlog, blog];
+    setSingleBlog(newBlog);
   };
 
   // get the reading time
