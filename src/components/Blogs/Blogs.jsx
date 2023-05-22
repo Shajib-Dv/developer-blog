@@ -21,6 +21,7 @@ const Blogs = () => {
   const handleBlog = (blog) => {
     if (singleBlog && singleBlog.find((b) => b.id == blog.id)) {
       toast("You have already bookmarked this blog");
+      return;
     }
     const newBlog = [...singleBlog, blog];
     setSingleBlog(newBlog);
